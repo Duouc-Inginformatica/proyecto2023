@@ -55,7 +55,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/sebas/OneDrive/Escritorio/proyecto/myproject/users/web'],
+        'DIRS': ['C:/Users/sebas/OneDrive/Escritorio/proyecto/myproject/users/users/web'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
