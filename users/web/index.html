@@ -376,18 +376,18 @@
                                     <div class="product">
                                         <div class="product-cart-details">
                                             <h4 class="product-title">
-                                                <a href="product.html">Beige knitted elastic runner shoes</a>
+                                                <a href="product.html">Guitarra ax12</a>
                                             </h4>
 
                                             <span class="cart-product-info">
                                                 <span class="cart-product-qty">1</span>
-                                                x $84.00
+                                                x $665.660
                                             </span>
                                         </div><!-- End .product-cart-details -->
 
                                         <figure class="product-image-container">
                                             <a href="product.html" class="product-image">
-                                                <img src="static/assets/images/products/cart/product-1.jpg" alt="product">
+                                                <img src="static/assets/images/seba1.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -396,18 +396,18 @@
                                     <div class="product">
                                         <div class="product-cart-details">
                                             <h4 class="product-title">
-                                                <a href="product.html">Blue utility pinafore denim dress</a>
+                                                <a href="product">Repuestos AX12</a>
                                             </h4>
 
                                             <span class="cart-product-info">
                                                 <span class="cart-product-qty">1</span>
-                                                x $76.00
+                                                x $79.990
                                             </span>
                                         </div><!-- End .product-cart-details -->
 
                                         <figure class="product-image-container">
                                             <a href="product.html" class="product-image">
-                                                <img src="static/assets/images/products/cart/product-2.jpg" alt="product">
+                                                <img src="static/assets/images/seba12.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -417,12 +417,12 @@
                                 <div class="dropdown-cart-total">
                                     <span>Total</span>
 
-                                    <span class="cart-total-price">$160.00</span>
+                                    <span class="cart-total-price">$745.650</span>
                                 </div><!-- End .dropdown-cart-total -->
 
                                 <div class="dropdown-cart-action">
-                                    <a href="cart.html" class="btn btn-primary">View Cart</a>
-                                    <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
+                                    <a href="cart" class="btn btn-primary">View Cart</a>
+                                    <a href="checkout" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
                                 </div><!-- End .dropdown-cart-total -->
                             </div><!-- End .dropdown-menu -->
                         </div><!-- End .cart-dropdown -->
@@ -645,29 +645,31 @@
                                 }
                             }'>
                             <div class="product product-11 text-center">
+                                {% for Sebas in Sebas %}
                                 <figure class="product-media">
                                     <a href="product.html">
-                                        <img src="{% static 'assets/images/seba11.jpg' %}" alt="Product image" class="product-image">
-                                        <img src="{% static 'assets/images/seba11.jpg' %}" alt="Product image" class="product-image-hover">
+                                        <!-- seba11 -->
+                                        <img src="{{ Sebas.imga.url }}" alt="Product image" class="product-image">
+                                        <img src="{{ Sebas.imgb.url }}" alt="Product image" class="product-image-hover">
                                     </a>
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
-                                </figure><!-- End .product-media -->
+                                    </div>
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Guitarra Española</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="product.html">{{ Sebas.nombre}}</a></h3>
                                     <div class="product-price">
-                                        $251,00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
+                                        ${{ Sebas.precio}}
+                                    </div>
+                                </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
-
-                            <div class="product product-11 text-center">
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- <div class="product product-11 text-center">
                                 <figure class="product-media">
                                     <a href="product.html">
                                         <img src="{% static 'assets/images/seba12.jpg' %}" alt="Product image" class="product-image">
@@ -676,26 +678,26 @@
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
-                                </figure><!-- End .product-media -->
+                                    </div>
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Ukelele hawaiana</a></h3><!-- End .product-title -->
-                                    <div class="product-price">
+                                    <h3 class="product-title"><a href="product.html">Ukelele hawaiana</a></h3>-->
+                                    <!-- <div class="product-price">
                                         $746,00
-                                    </div><!-- End .product-price -->
+                                    </div>
 
                                     <div class="product-nav product-nav-dots">
                                         <a href="#" class="active" style="background: #1f1e18;"><span class="sr-only">Nombre color</span></a>
                                         <a href="#" style="background: #e8e8e8;"><span class="sr-only">Nombre color</span></a>
-                                    </div><!-- End .product-nav -->
-                                </div><!-- End .product-body -->
+                                    </div>-->
+                                <!-- </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
+                                </div>
+                            </div> -->
 
-                            <div class="product product-11 text-center">
+                            <!-- <div class="product product-11 text-center">
                                 <figure class="product-media">
                                     <span class="product-label label-new">NEW</span>
                                     <a href="product.html">
@@ -705,22 +707,22 @@
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
+                                    </div>
 
-                                </figure><!-- End .product-media -->
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Ukelele Soprano black</a></h3><!-- End .product-title -->
-                                    <div class="product-price">
+                                    <h3 class="product-title"><a href="product.html">Ukelele Soprano black</a></h3>-->
+                                    <!-- <div class="product-price">
                                         $970,00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
+                                    </div>
+                                </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
+                                </div>
+                            </div> -->
 
-                            <div class="product product-11 text-center">
+                            <!-- <div class="product product-11 text-center">
                                 <figure class="product-media">
                                     <span class="product-label label-sale">30% OFF</span>
                                     <a href="product.html">
@@ -730,28 +732,28 @@
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
+                                    </div>
 
-                                </figure><!-- End .product-media -->
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Piano digital</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="product.html">Piano digital</a></h3>
                                     <div class="product-price">
                                         <span class="new-price">$337,00</span>
                                         <span class="old-price">Was $449,00</span>
-                                    </div><!-- End .product-price -->
+                                    </div>
 
                                     <div class="product-nav product-nav-dots">
                                         <a href="#" class="active" style="background: #878883;"><span class="sr-only">Nombre color</span></a>
                                         <a href="#" style="background: #dfd5c2;"><span class="sr-only">Nombre color</span></a>
-                                    </div><!-- End .product-nav -->
-                                </div><!-- End .product-body -->
+                                    </div>
+                                </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
+                                </div> -->
+                            <!-- </div>  -->
 
-                            <div class="product product-11 text-center">
+                            <!-- <div class="product product-11 text-center">
                                 <figure class="product-media">
                                     <a href="product.html">
                                         <img src="{% static 'assets/images/seba20.avif' %}" alt="Product image" class="product-image">
@@ -760,25 +762,25 @@
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
+                                    </div>
 
-                                </figure><!-- End .product-media -->
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Petite Table Lamp</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="product.html">Petite Table Lamp</a></h3>
                                     <div class="product-price">
                                         $675,00
-                                    </div><!-- End .product-price -->
+                                    </div>
 
                                     <div class="product-nav product-nav-dots">
                                         <a href="#" class="active" style="background: #74543e;"><span class="sr-only">Nombre color</span></a>
                                         <a href="#" style="background: #e8e8e8;"><span class="sr-only">Nombre color</span></a>
-                                    </div><!-- End .product-nav -->
-                                </div><!-- End .product-body -->
+                                    </div>
+                                </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
+                                </div>
+                            </div>
 
                             <div class="product product-11 text-center">
                                 <figure class="product-media">
@@ -789,22 +791,22 @@
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
+                                    </div>
 
-                                </figure><!-- End .product-media -->
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Elephant Armchair</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="product.html">Elephant Armchair</a></h3>
                                     <div class="product-price">
                                         $457,00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
+                                    </div>
+                                </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
+                                </div>
+                            </div> -->
 
-                            <div class="product product-11 text-center">
+                            <!-- <div class="product product-11 text-center">
                                 <figure class="product-media">
                                     <a href="product.html">
                                         <img src="{% static 'assets/images/seba20.avif' %}" alt="Product image" class="product-image">
@@ -813,21 +815,21 @@
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
+                                    </div>
 
-                                </figure><!-- End .product-media -->
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Butler Stool Ladder</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="product.html">Butler Stool Ladder</a></h3>
                                     <div class="product-price">
                                         $251,00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
+                                    </div>
+                                </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
-                        </div><!-- End .owl-carousel -->
+                                </div>
+                            </div> -->
+                        </div>
                     </div><!-- .End .tab-pane -->
                     <div class="tab-pane p-0 fade" id="trendy-fur-tab" role="tabpanel" aria-labelledby="trendy-fur-link">
                         <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
@@ -857,61 +859,31 @@
                                 }
                             }'>
                             <div class="product product-11 text-center">
+                                {% for Sebas in Sebas %}
                                 <figure class="product-media">
-                                    <span class="product-label label-new">NEW</span>
                                     <a href="product.html">
-                                        <img src="{% static 'assets/images/seba20.avif' %}" alt="Product image" class="product-image">
-                                        <img src="{% static 'assets/images/seba20.avif' %}" alt="Product image" class="product-image-hover">
+                                        <!-- seba11 -->
+                                        <img src="{{ Sebas.imga.url }}" alt="Product image" class="product-image">
+                                        <img src="{{ Sebas.imgb.url }}" alt="Product image" class="product-image-hover">
                                     </a>
 
                                     <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
-
-                                </figure><!-- End .product-media -->
-
-                                <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Flow Slim Armchair</a></h3><!-- End .product-title -->
-                                    <div class="product-price">
-                                        $970,00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
-
-                            <div class="product product-11 text-center">
-                                <figure class="product-media">
-                                    <span class="product-label label-sale">30% OFF</span>
-                                    <a href="product.html">
-                                        <img src="{% static 'assets/images/seba20.avif' %}" alt="Product image" class="product-image">
-                                        <img src="{% static 'assets/images/seba20.avif' %}" alt="Product image" class="product-image-hover">
-                                    </a>
-
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist"><span>Agregar a favorito</span></a>
-                                    </div><!-- End .product-action-vertical -->
-
-                                </figure><!-- End .product-media -->
+                                    </div>
+                                </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product.html">Roots Sofa Bed</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="product.html">{{ Sebas.nombre}}</a></h3>
                                     <div class="product-price">
-                                        <span class="new-price">$337,00</span>
-                                        <span class="old-price">Was $449,00</span>
-                                    </div><!-- End .product-price -->
-
-                                    <div class="product-nav product-nav-dots">
-                                        <a href="#" class="active" style="background: #878883;"><span class="sr-only">Nombre color</span></a>
-                                        <a href="#" style="background: #dfd5c2;"><span class="sr-only">Nombre color</span></a>
-                                    </div><!-- End .product-nav -->
-                                </div><!-- End .product-body -->
+                                        ${{ Sebas.precio}}
+                                    </div>
+                                </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
-                                </div><!-- End .product-action -->
-                            </div><!-- End .product -->
+                                </div>
+                            </div>
                         </div><!-- End .owl-carousel -->
+                        {% endfor %}
                     </div><!-- .End .tab-pane -->
                     <div class="tab-pane p-0 fade" id="trendy-decor-tab" role="tabpanel" aria-labelledby="trendy-decor-link">
                         <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 

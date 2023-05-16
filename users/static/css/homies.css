@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open+Sans', sans-serif;
+}
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #efefef;
+	background-image: url(../img/avaras.jpg);
+	backdrop-filter: blur(3px);
+}
+.card 
+{
+	position: relative;
+	width: 350px;
+	height: 190px;
+	background: #ffffff;
+	border-radius: 20px;
+	transition: 0.5s;
+	box-shadow: 0 35px 80px rgb(0 0 0);
+}
+.card:hover 
+{
+	height: 450px;
+}
+.card .imgBx 
+{
+	position: absolute;
+	left: 50%;
+	top: -50px;
+	transform: translateX(-50%);
+	width: 150px;
+	height: 150px;
+	border-radius: 20px;
+	box-shadow: 0 15px 50px rgb(0 0 0);
+	overflow: hidden;
+	transition: 0.9s;
+	z-index: 10;
+}
+.card:hover .imgBx 
+{
+	width: 250px;
+	height: 250px;
+}
+.card .imgBx img 
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.card .content 
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	overflow: hidden;
+}
+.card .details 
+{
+	padding: 40px 40px;
+	text-align: center;
+	width: 100%;
+	transition: 0.5s;
+	transform: translateY(150px);
+}
+.card:hover .details 
+{
+	transform: translateY(0px);
+}
+.card .details h2  
+{
+	font-size: 1.25em;
+	font-weight: 600;
+	color: #555;
+	line-height: 1.2em;
+}
+.card .details h2 span 
+{
+	font-size: 0.75em;
+	font-weight: 500;
+	opacity: 0.5;
+}
+.card .details .data 
+{
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+.card .details .data h3 
+{
+	font-size: 1em;
+	color: #555;
+	line-height: 1.2em;
+	font-weight: 600;
+}
+.card .details .data h3 span 
+{
+	font-size: 0.85em;
+	font-weight: 400;
+	opacity: 0.5;
+}
+.card .details .actionBtn 
+{
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+} 
+.card .details .actionBtn button
+{
+	padding: 10px 30px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	font-size: 1em;
+	font-weight: 500;
+	background: #dc354600;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	box-shadow: 0 35px 80px rgb(0 0 0);
+	
+}
+.card .details .actionBtn button:nth-child(2) {
+    border: 1px solid #999;
+    background: #dc354600;
+	color: rgb(255, 255, 255);
+}
+
+.card .details .actionBtn:hover button:hover
+{
+	color: rgb(255, 254, 254);
+	background: #06c2d7;
+	cursor: pointer;
+}
+
+
+.card .details .actionBtn a.button
+{
+	padding: 10px 30px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	font-size: 1em;
+	font-weight: 500;
+	background: #dc354600;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	box-shadow: 0 35px 80px rgb(0 0 0);
+	
+}
+.card .details .actionBtn a.button:nth-child(2) {
+    border: 1px solid #999;
+    background: #ffffff00;
+	color: rgb(255, 255, 255);
+}
+
+.card .details .actionBtn:hover a.button:hover
+{
+	color: rgb(255, 254, 254);
+	background: #06c2d7;
+	cursor: pointer;
+}
+
+a:-webkit-any-link {
+	text-decoration: none !important;
+  }
+
+/* aqui empieza el boton custom rgb */
+
+
+ .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+.colored-toast.swal2-icon-success {
+	background-color: #a5dc86 !important;
+  }
+  
+  .colored-toast.swal2-icon-error {
+	background-color: #f27474 !important;
+  }
+  
+  .colored-toast.swal2-icon-warning {
+	background-color: #f8bb86 !important;
+  }
+  
+  .colored-toast.swal2-icon-info {
+	background-color: #1e1e1e !important;
+  }
+  
+  .colored-toast.swal2-icon-question {
+	background-color: #87adbd !important;
+  }
+  
+  .colored-toast .swal2-title {
+	color: white;
+  }
+  
+  .colored-toast .swal2-close {
+	color: white;
+  }
+  
+  .colored-toast .swal2-html-container {
+	color: white;
+  }
+

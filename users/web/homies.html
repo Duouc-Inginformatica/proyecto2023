@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>👑</title>
+<link rel="stylesheet" type="text/css" href="{% static "css/homies.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/sweetalert2.css" %}">
+</head>
+<body onload="colordet()">
+	<div class="card">
+		<div class="imgBx">
+			<img src="{% static "img/img.jpg"  %}">
+		</div>
+		<div class="content">
+			<div class="details">
+				<h2>Integracion de plataforma <br><span>Sebastian Muñoz</span></h2>
+				<div class="data">
+					<h3>Django<br><span>Python</span></h3>
+					<h3>MySql<br><span>Jquery</span></h3>
+					<h3>Bootstrap<br><span>v5.2</span></h3>
+				</div>
+				<div class="actionBtn">
+					<a href="index" class="button glow-on-hover">TIENDA</a>
+					<a href="admin/" class="button glow-on-hover">LOGISTICA</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="static/js/sweetalert2.all.js"></script>
+<script src="static/js/seba.js"></script>
+</html>
