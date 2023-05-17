@@ -1,10 +1,5 @@
 {% load static %}
-
-<!DOCTYPE html>
 <html lang="en">
-
-
-<!-- molla/index-2.html  22 Nov 2019 09:55:32 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/seba.png'  %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/seba.png'  %}">
     <link rel="manifest" href="{% static 'assets/images/icons/site.html'  %}">
+    <link rel="stylesheet" type="text/css" href="static/css/sweetalert2.css">
     <link rel="mask-icon" href="{% static 'assets/images/icons/safari-pinned-tab.svg'  %}" color="#666666">
     <link rel="shortcut icon" href="{% static 'assets/images/seba.png'  %}">
     <meta name="apple-mobile-web-app-title" content="Molla">
@@ -27,20 +23,40 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/miniseba.css'  %}">
     <link rel="stylesheet" href="{% static 'assets/css/plugins/owl-carousel/owl.carousel.css' %}">
     <link rel="stylesheet" href="'{% static 'assets/css/plugins/magnific-popup/magnific-popup.css' %}">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <script>
+        window.custome = async () => {
+            const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 17000,
+            timerProgressBar: true
+      })
+        await Toast.fire({
+            icon: 'info',
+            title: "Dolar se Actualizo al: {{ dolar }} Proxima actualizacion {{ next }} "
+        })
+      }
+    </script>
 </head>
 
-<body>
+<body onload="custome()">
     <div class="page-wrapper">
         <header class="header">
             <div class="header-top">
                 <div class="container">
                     <div class="header-left">
                         <div class="header-dropdown">
-                            <a href="#">CLP</a>
+                            <a href="#">USD</a>
                             <div class="header-menu">
                                 <ul>
                                     <li><a href="enindex">USD</a></li>
@@ -55,7 +71,7 @@
                                 <ul>
                                     <li><a href="#">English</a></li>
                                     <li><a href="#">French</a></li>
-                                    <li><a href="#">...</a></li>
+                                    <li></li>
                                 </ul>
                             </div><!-- End .header-menu -->
                         </div><!-- End .header-dropdown -->
@@ -66,6 +82,7 @@
                             <li>
                                 <a href="#">Links</a>
                                 <ul>
+                                    <!-- <li><a style="color: #ffffff !important; background-color: #1f1e18; "  href="#">{{ data.conversion_rate }}</a></li> -->
                                     <li><a href="tel:#"><i class="icon-phone"></i>Atencion clientes: +56930481271</a></li>
                                     <li><a href="wishlist.html"><i class="icon-heart-o"></i>My lista <span>(3)</span></a></li>
                                     <li><a href="about.html">Sobre empresa</a></li>
@@ -661,14 +678,14 @@
                                 <div class="product-body">
                                     <h3 class="product-title"><a href="product.html">{{ Sebas.nombre}}</a></h3>
                                     <div class="product-price">
-                                        ${{ Sebas.precio}}
+                                        USD {{ total }}
                                     </div>
+                                    {% endfor %}
                                 </div>
                                 <div class="product-action">
                                     <a href="#" class="btn-product btn-cart"><span>Agregar al carro</span></a>
                                 </div>
                             </div>
-                            {% endfor %}
                             <!-- <div class="product product-11 text-center">
                                 <figure class="product-media">
                                     <a href="product.html">
@@ -874,8 +891,8 @@
 
                                 <div class="product-body">
                                     <h3 class="product-title"><a href="product.html">{{ Sebas.nombre}}</a></h3>
-                                    <div class="product-price">
-                                        ${{ Sebas.precio}}
+                                    <div class="product-price" id="precio" >
+                                        USD {{ total }}
                                     </div>
                                 </div>
                                 <div class="product-action">
@@ -1143,7 +1160,7 @@
                                         </figure><!-- End .product-media -->
 
                                         <div class="product-body">
-                                            <h3 class="product-title"><a href="product.html">SOON</a></h3><!-- End .product-title -->
+                                            <h3 class="product-title"><a href="product.html">SOONy</a></h3><!-- End .product-title -->
                                             <div class="product-price">
                                                 $
                                             </div><!-- End .product-price -->
@@ -1230,7 +1247,7 @@
                                         </figure><!-- End .product-media -->
 
                                         <div class="product-body">
-                                            <h3 class="product-title"><a href="product.html">SOON</a></h3><!-- End .product-title -->
+                                            <h3 class="product-title"><a href="product.html">Madra Log Holder</a></h3><!-- End .product-title -->
                                             <div class="product-price">
                                                 $
                                             </div><!-- End .product-price -->
@@ -1401,7 +1418,7 @@
                                         </figure><!-- End .product-media -->
 
                                         <div class="product-body">
-                                            <h3 class="product-title"><a href="product.html">SOON</a></h3><!-- End .product-title -->
+                                            <h3 class="product-title"><a href="product.html">SOONy</a></h3><!-- End .product-title -->
                                             <div class="product-price">
                                                 $
                                             </div><!-- End .product-price -->
@@ -1461,7 +1478,7 @@
                                         </figure><!-- End .product-media -->
 
                                         <div class="product-body">
-                                            <h3 class="product-title"><a href="product.html">SOON</a></h3><!-- End .product-title -->
+                                            <h3 class="product-title"><a href="product.html">Madra Log Holder</a></h3><!-- End .product-title -->
                                             <div class="product-price">
                                                 $
                                             </div><!-- End .product-price -->
@@ -2120,11 +2137,13 @@
     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'assets/js/jquery.hoverIntent.min.js' %}"></script>
     <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+    <!-- <script src="{% static 'js/fetch.js' %}"></script> -->
     <script src="{% static 'assets/js/superfish.min.js' %}"></script>
     <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
     <!-- Main JS File -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="static/js/sweetalert2.all.js"></script>
 </body>
 
 

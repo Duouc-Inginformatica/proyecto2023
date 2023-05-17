@@ -17,7 +17,7 @@ Including another URLconf
 from xml.etree.ElementInclude import include as include_xml #para incluir archivos xml
 from django.contrib import admin
 from django.urls import path, include
-from users.views import index, homies, cart, checkout, imgs
+from users.views import index, homies, cart, checkout, imgs, enindex
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,6 +29,7 @@ urlpatterns = [
     path('checkout', checkout, name='checkout'),
     path('imgs', imgs, name='imgs'),
     path('api/', include('api.urls')), #para que se pueda acceder a la pagina de api
+    path('enindex', enindex, name='engindex'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # New
 
 if settings.DEBUG:
