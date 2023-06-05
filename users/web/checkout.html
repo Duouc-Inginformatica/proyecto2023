@@ -581,7 +581,7 @@
             					<label for="checkout-discount-input" class="text-truncate">Tienes cupon <span>Preciona aqui</span></label>
             				</form>
             			</div><!-- End .checkout-discount -->
-            			<form action="#">
+            			<form action="{{ token_ws }}" method="POST">
 		                	<div class="row">
 		                		<div class="col-lg-9">
 		                			<h2 class="checkout-title">Procesar pago</h2><!-- End .checkout-title -->
@@ -759,7 +759,7 @@
 										        </div><!-- End .collapse -->
 										    </div><!-- End .card -->
 										</div><!-- End .accordion -->
-
+                                        <input type="hidden" name="TBK_TOKEN" value="{{ token_ws }}">
 		                				<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
 		                					<span class="btn-text">Por favor, ordene</span>
 		                					<span class="btn-hover-text">Pasar por la caja</span>

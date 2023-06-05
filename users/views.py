@@ -9,14 +9,58 @@ from api.models import Sebe #importar la tabla seba
 from api.forms import SebeForm #importar formulario
 from django.conf import settings
 from .models import *
-
-# Create your views here.
-# Create your views here.
-
-import requests
-
+from transbank.webpay.webpay_plus import *
 import requests
 import json
+from django.views import View
+import os
+# import transbank.configuration
+
+import stripe
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+class CreateStripeCheckoutSessionView(View):
+    """
+    Create a checkout session and redirect the user to Stripe's checkout page
+    """
+
+    def post(self, request, *args, **kwargs):
+        price = Price.objects.get(id=self.kwargs["pk"])
+
+        checkout_session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=[
+                {
+                    "price_data": {
+                        "currency": "usd",
+                        "unit_amount": int(price.price) * 100,
+                        "product_data": {
+                            "name": price.product.name,
+                            "description": price.product.desc,
+                            "images": [
+                                f"{settings.BACKEND_DOMAIN}/{price.product.thumbnail}"
+                            ],
+                        },
+                    },
+                    "quantity": price.product.quantity,
+                }
+            ],
+            metadata={"product_id": price.product.id},
+            mode="payment",
+            success_url=settings.PAYMENT_SUCCESS_URL,
+            cancel_url=settings.PAYMENT_CANCEL_URL,
+        )
+        return redirect(checkout_session.url)
+
+
+# pip install transbank-sdk
+
+# API_KEY_ID = '597055555532'
+# API_KEY_SECRET = '579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C'
+# ENVIRONMENT = transbank.util.Environment.integration
+# # Inicializa el SDK de Transbank con tus credenciales
+# transbank.Configuration.for_integration_webpay_plus_normal(API_KEY_ID, API_KEY_SECRET)
 
 def enindex(request):
     response = requests.get('https://v6.exchangerate-api.com/v6/72552993d706facefc816853/pair/USD/CLP')
@@ -68,3 +112,16 @@ def checkout(request):
 
 def imgs(request):
     return render(request, document_root=settings.MEDIA_ROOT)
+
+
+from django.views.generic import TemplateView
+
+class SuccessView(TemplateView):
+    template_name = "success.html"
+
+class CancelView(TemplateView):
+    template_name = "cancel.html"
+
+def Ceckout(request):
+    return render(request, 'Ceckout.html')
+
